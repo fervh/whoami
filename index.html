@@ -37,7 +37,7 @@
     <!-- Iconos -->
     <link rel="icon" href="./assets/icons/fv-icon.svg" type="image/svg+xml" />
 </head>
-<body class="bg-primary text-light font-sans">
+<body class="bg-primary text-light font-sans select-none">
     <!-- Fixed Navigation -->
     <nav id="navbar" class="fixed w-full z-50 bg-dark/90 backdrop-blur-sm border-b border-secondary/20">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -206,164 +206,124 @@
 
     <!-- Experience Section -->
     <section id="experience" class="py-20 bg-gradient-to-b from-slate-900/50 to-dark/80">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
-                <i data-lucide="briefcase" class="w-6 h-6"></i>
-                Work Experience
-            </h2>
-            <div class="h-1 w-24 bg-secondary rounded mb-12 mx-auto"></div>
-            
-            <!-- Experience Timeline -->
-            <div class="max-w-3xl mx-auto relative">
-                <!-- Timeline line -->
-                <div class="hidden md:block timeline-line"></div>
-                
-                <!-- Job 1 -->
-                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="timeline-item mb-12 md:pl-12 relative">
-                    <div class="hidden md:block timeline-dot top-1"></div>
-                    
-                    <div class="bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-xl font-bold text-secondary">Research Technician</h3>
-                                <div class="flex items-center gap-2 mb-3 text-slate-300">
-                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
-                                    <span>AMPL, UC3M</span>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">2023 - Present</span>
-                                <button @click="open = !open" class="mt-2 text-slate-400 hover:text-secondary">
-                                    <i data-lucide="chevron-up" x-show="open" class="w-5 h-5"></i>
-                                    <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div x-show="open" class="mt-4" x-transition>
-                            <ul class="space-y-2 text-slate-300">
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
-                                    <span>Real-time perception systems with YOLOv5/v8, SECOND</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
-                                    <span>Sensor calibration (LiDAR, Camera, IMU)</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
-                                    <span>ROS1/ROS2 drivers, CAN bus, FlexRay, low-level comms (UDP/TCP/WebRTC/SRT)</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
-                                    <span>PCB design, 3D mechanical structures (Fusion 360, Blender)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
+        <i data-lucide="briefcase" class="w-6 h-6"></i>
+        Work Experience
+        </h2>
+        <div class="h-1 w-24 bg-secondary rounded mb-12 mx-auto"></div>
+
+        <!-- Experience Timeline -->
+        <div class="max-w-3xl mx-auto relative" x-data="{ open: 0 }">
+        <!-- Timeline line -->
+        <div class="hidden md:block timeline-line"></div>
+
+        <!-- Job 1 (visible by default) -->
+        <div class="timeline-item mb-12 md:pl-12 relative">
+            <div class="hidden md:block timeline-dot top-1"></div>
+            <div
+            @click="open === 0 ? open = null : open = 0"
+            class="cursor-pointer bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300"
+            >
+            <div class="flex flex-col sm:flex-row justify-between items-start">
+                <div class="mb-3 sm:mb-0">
+                <h3 class="text-xl font-bold text-secondary">Research Technician</h3>
+                <div class="flex items-center gap-2 mb-3 text-slate-300">
+                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                    <span>AMPL, UC3M</span>
                 </div>
-                
-                <!-- Job 2 -->
-                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="timeline-item mb-12 md:pl-12 relative">
-                    <div class="hidden md:block timeline-dot top-1"></div>
-                    
-                    <div class="bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-xl font-bold text-secondary">Recruitment Technician</h3>
-                                <div class="flex items-center gap-2 mb-3 text-slate-300">
-                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
-                                    <span>Serveo</span>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">2022 - 2023</span>
-                                <button @click="open = !open" class="mt-2 text-slate-400 hover:text-secondary">
-                                    <i data-lucide="chevron-up" x-show="open" class="w-5 h-5"></i>
-                                    <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div x-show="open" class="mt-4" x-transition>
-                            <ul class="space-y-2 text-slate-300">
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
-                                    <span>Tech project support for energy and facilities management</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
-                
-                <!-- Job 3 -->
-                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="timeline-item mb-12 md:pl-12 relative">
-                    <div class="hidden md:block timeline-dot top-1"></div>
-                    
-                    <div class="bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-xl font-bold text-secondary">STEM Teacher</h3>
-                                <div class="flex items-center gap-2 mb-3 text-slate-300">
-                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
-                                    <span>The Creative Minds</span>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">2020 - 2022</span>
-                                <button @click="open = !open" class="mt-2 text-slate-400 hover:text-secondary">
-                                    <i data-lucide="chevron-up" x-show="open" class="w-5 h-5"></i>
-                                    <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div x-show="open" class="mt-4" x-transition>
-                            <ul class="space-y-2 text-slate-300">
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
-                                    <span>Robotics, Python, Arduino, 3D design for students</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Job 4 -->
-                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="timeline-item mb-12 md:pl-12 relative">
-                    <div class="hidden md:block timeline-dot top-1"></div>
-                    
-                    <div class="bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-xl font-bold text-secondary">Private Tutor</h3>
-                                <div class="flex items-center gap-2 mb-3 text-slate-300">
-                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
-                                    <span>Tusclasesparticulares</span>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">2018 - 2021</span>
-                                <button @click="open = !open" class="mt-2 text-slate-400 hover:text-secondary">
-                                    <i data-lucide="chevron-up" x-show="open" class="w-5 h-5"></i>
-                                    <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div x-show="open" class="mt-4" x-transition>
-                            <ul class="space-y-2 text-slate-300">
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
-                                    <span>Math, physics, and programming tutoring</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="sm:text-right flex-shrink-0">
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm inline-block whitespace-nowrap">2023 - Present</span>
                 </div>
             </div>
+            <ul x-show="open === 0" x-transition class="mt-4 space-y-2 text-slate-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i><span>Real-time perception systems with YOLOv5/v8, SECOND</span></li>
+                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i><span>Sensor calibration (LiDAR, Camera, IMU)</span></li>
+                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i><span>ROS1/ROS2 drivers, CAN bus, FlexRay, low-level comms (UDP/TCP/WebRTC/SRT)</span></li>
+                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i><span>PCB design, 3D mechanical structures (Fusion 360, Blender)</span></li>
+            </ul>
+            </div>
         </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item mb-12 md:pl-12 relative">
+            <div class="hidden md:block timeline-dot top-1"></div>
+            <div
+            @click="open === 1 ? open = null : open = 1"
+            class="cursor-pointer bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300"
+            >
+            <div class="flex flex-col sm:flex-row justify-between items-start">
+                <div class="mb-3 sm:mb-0">
+                <h3 class="text-xl font-bold text-secondary">Recruitment Technician</h3>
+                <div class="flex items-center gap-2 mb-3 text-slate-300">
+                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                    <span>Serveo</span>
+                </div>
+                </div>
+                <div class="sm:text-right flex-shrink-0">
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm inline-block whitespace-nowrap">2022 - 2023</span>
+                </div>
+            </div>
+            <ul x-show="open === 1" x-transition class="mt-4 space-y-2 text-slate-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i><span>Tech project support for energy and facilities management</span></li>
+            </ul>
+            </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item mb-12 md:pl-12 relative">
+            <div class="hidden md:block timeline-dot top-1"></div>
+            <div
+            @click="open === 2 ? open = null : open = 2"
+            class="cursor-pointer bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300"
+            >
+            <div class="flex flex-col sm:flex-row justify-between items-start">
+                <div class="mb-3 sm:mb-0">
+                <h3 class="text-xl font-bold text-secondary">STEM Teacher</h3>
+                <div class="flex items-center gap-2 mb-3 text-slate-300">
+                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                    <span>The Creative Minds</span>
+                </div>
+                </div>
+                <div class="sm:text-right flex-shrink-0">
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm inline-block whitespace-nowrap">2020 - 2022</span>
+                </div>
+            </div>
+            <ul x-show="open === 2" x-transition class="mt-4 space-y-2 text-slate-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i><span>Robotics, Python, Arduino, 3D design for students</span></li>
+            </ul>
+            </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="timeline-item mb-12 md:pl-12 relative">
+            <div class="hidden md:block timeline-dot top-1"></div>
+            <div
+            @click="open === 3 ? open = null : open = 3"
+            class="cursor-pointer bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300"
+            >
+            <div class="flex flex-col sm:flex-row justify-between items-start">
+                <div class="mb-3 sm:mb-0">
+                <h3 class="text-xl font-bold text-secondary">Private Tutor</h3>
+                <div class="flex items-center gap-2 mb-3 text-slate-300">
+                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                    <span>Tusclasesparticulares</span>
+                </div>
+                </div>
+                <div class="sm:text-right flex-shrink-0">
+                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm inline-block whitespace-nowrap">2018 - 2021</span>
+                </div>
+            </div>
+            <ul x-show="open === 3" x-transition class="mt-4 space-y-2 text-slate-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i><span>Math, physics, and programming tutoring</span></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </div>
     </section>
+        
 
     <!-- Education Section -->
     <section id="education" class="py-20 bg-dark">
@@ -768,112 +728,115 @@
 
     <!-- Certifications Section -->
     <section id="certifications" class="py-20 bg-gradient-to-b from-slate-900/50 to-dark">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
-                <i data-lucide="bookmark" class="w-6 h-6"></i>
-                Certifications
-            </h2>
-            <div class="h-1 w-24 bg-secondary rounded mb-12 mx-auto"></div>
-            
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-dark/80 rounded-lg border border-slate-800 overflow-hidden">
-                    <!-- Drone Certifications -->
-                    <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-                        <button @click="open = !open" 
-                                class="w-full px-6 py-4 flex justify-between items-center bg-slate-900/50 hover:bg-slate-900/70 transition">
-                            <div class="flex items-center gap-3">
-                                <i data-lucide="rectangle-goggles" class="w-5 h-5 text-secondary"></i>
-                                <h3 class="font-medium text-lg">Drone Pilot Certifications</h3>
-                            </div>
-                            <i data-lucide="chevron-up" x-show="open" class="w-5 h-5 text-slate-400"></i>
-                            <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5 text-slate-400"></i>
-                        </button>
-                        <div x-show="open" class="p-6 bg-dark/30" x-transition>
-                            <ul class="space-y-3">
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-secondary/10 rounded-md">
-                                        <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
-                                    </div>
-                                    <span>EASA A1/A3 Open Category</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-secondary/10 rounded-md">
-                                        <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
-                                    </div>
-                                    <span>EASA A2 Open Category</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-secondary/10 rounded-md">
-                                        <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
-                                    </div>
-                                    <span>EASA STS-01 Specific Category</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-secondary/10 rounded-md">
-                                        <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
-                                    </div>
-                                    <span>EASA STS-02 Specific Category</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-secondary/10 rounded-md">
-                                        <i data-lucide="radio" class="w-4 h-4 text-secondary"></i>
-                                    </div>
-                                    <span>UAS & Radio Operator License</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Technical Certifications -->
-                    <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative border-t border-slate-800">
-                        <button @click="open = !open" 
-                                class="w-full px-6 py-4 flex justify-between items-center bg-slate-900/50 hover:bg-slate-900/70 transition">
-                            <div class="flex items-center gap-3">
-                                <i data-lucide="file-code" class="w-5 h-5 text-secondary"></i>
-                                <h3 class="font-medium text-lg">Technical Certifications</h3>
-                            </div>
-                            <i data-lucide="chevron-up" x-show="open" class="w-5 h-5 text-slate-400"></i>
-                            <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5 text-slate-400"></i>
-                        </button>
-                        <div x-show="open" class="p-6 bg-dark/30" x-transition>
-                            <ul class="space-y-3">
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-accent/10 rounded-md">
-                                        <i data-lucide="calculator" class="w-4 h-4 text-accent"></i>
-                                    </div>
-                                    <span>MATLAB Certification</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-accent/10 rounded-md">
-                                        <i data-lucide="code" class="w-4 h-4 text-accent"></i>
-                                    </div>
-                                    <span>Python Programming</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-accent/10 rounded-md">
-                                        <i data-lucide="shield" class="w-4 h-4 text-accent"></i>
-                                    </div>
-                                    <span>Cybersecurity Fundamentals</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-accent/10 rounded-md">
-                                        <i data-lucide="layout" class="w-4 h-4 text-accent"></i>
-                                    </div>
-                                    <span>Web Development</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <div class="p-1.5 bg-accent/10 rounded-md">
-                                        <i data-lucide="gamepad-2" class="w-4 h-4 text-accent"></i>
-                                    </div>
-                                    <span>Unity Development</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
+        <i data-lucide="bookmark" class="w-6 h-6"></i>
+        Certifications
+        </h2>
+        <div class="h-1 w-24 bg-secondary rounded mb-12 mx-auto"></div>
+
+        <div class="max-w-3xl mx-auto" x-data="{ open: 0 }">
+        <div class="bg-dark/80 rounded-lg border border-slate-800 overflow-hidden">
+
+            <!-- Drone Certifications (visible by default) -->
+            <div class="relative">
+            <button @click="open === 0 ? open = null : open = 0"
+                    class="w-full px-6 py-4 flex justify-between items-center bg-slate-900/50 hover:bg-slate-900/70 transition">
+                <div class="flex items-center gap-3">
+                <i data-lucide="rectangle-goggles" class="w-5 h-5 text-secondary"></i>
+                <h3 class="font-medium text-lg">Drone Pilot Certifications</h3>
                 </div>
+                <i data-lucide="chevron-up" x-show="open === 0" class="w-5 h-5 text-slate-400"></i>
+                <i data-lucide="chevron-down" x-show="open !== 0" class="w-5 h-5 text-slate-400"></i>
+            </button>
+            <div x-show="open === 0" x-transition class="p-6 bg-dark/30">
+                <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                    <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
+                    </div>
+                    <span>EASA A1/A3 Open Category</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                    <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
+                    </div>
+                    <span>EASA A2 Open Category</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                    <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
+                    </div>
+                    <span>EASA STS-01 Specific Category</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                    <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
+                    </div>
+                    <span>EASA STS-02 Specific Category</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                    <i data-lucide="radio" class="w-4 h-4 text-secondary"></i>
+                    </div>
+                    <span>UAS & Radio Operator License</span>
+                </li>
+                </ul>
             </div>
+            </div>
+
+            <!-- Technical Certifications -->
+            <div class="relative border-t border-slate-800">
+            <button @click="open === 1 ? open = null : open = 1"
+                    class="w-full px-6 py-4 flex justify-between items-center bg-slate-900/50 hover:bg-slate-900/70 transition">
+                <div class="flex items-center gap-3">
+                <i data-lucide="file-code" class="w-5 h-5 text-secondary"></i>
+                <h3 class="font-medium text-lg">Technical Certifications</h3>
+                </div>
+                <i data-lucide="chevron-up" x-show="open === 1" class="w-5 h-5 text-slate-400"></i>
+                <i data-lucide="chevron-down" x-show="open !== 1" class="w-5 h-5 text-slate-400"></i>
+            </button>
+            <div x-show="open === 1" x-transition class="p-6 bg-dark/30">
+                <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-accent/10 rounded-md">
+                    <i data-lucide="calculator" class="w-4 h-4 text-accent"></i>
+                    </div>
+                    <span>MATLAB Certification</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-accent/10 rounded-md">
+                    <i data-lucide="code" class="w-4 h-4 text-accent"></i>
+                    </div>
+                    <span>Python Programming</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-accent/10 rounded-md">
+                    <i data-lucide="shield" class="w-4 h-4 text-accent"></i>
+                    </div>
+                    <span>Cybersecurity Fundamentals</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-accent/10 rounded-md">
+                    <i data-lucide="layout" class="w-4 h-4 text-accent"></i>
+                    </div>
+                    <span>Web Development</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <div class="p-1.5 bg-accent/10 rounded-md">
+                    <i data-lucide="gamepad-2" class="w-4 h-4 text-accent"></i>
+                    </div>
+                    <span>Unity Development</span>
+                </li>
+                </ul>
+            </div>
+            </div>
+
         </div>
+        </div>
+    </div>
     </section>
+
 
     <!-- Languages & Interests Section -->
     <section id="languages-interests" class="py-20 bg-dark">

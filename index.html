@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando Vela Hidalgo | Robotics Engineer</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',       /* slate-900 */
+                        secondary: '#06b6d4',     /* cyan-500 */
+                        accent: '#10b981',        /* emerald-500 */
+                        dark: '#020617',          /* slate-950 */
+                        light: '#f8fafc',         /* slate-50 */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                },
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Alpine.js for Interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <!-- Iconos -->
+    <link rel="icon" href="./assets/icons/fv-icon.svg" type="image/svg+xml" />
+</head>
+<body class="bg-primary text-light font-sans">
+    <!-- Fixed Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 bg-dark/90 backdrop-blur-sm border-b border-secondary/20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between items-center">
+                <!-- Logo/Name -->
+                <a href="#hero" class="flex items-center space-x-2 font-sans">
+                <!-- Icono desde assets -->
+                <img src="./assets/icons/fv-icon.svg" alt="FV logo" width="40" height="40" class="rounded-lg drop-shadow-lg" />
+                </a>
+                
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button type="button" id="mobile-menu-button" 
+                            class="inline-flex items-center justify-center p-2 rounded-md text-light hover:bg-primary hover:text-secondary">
+                        <i data-lucide="menu" class="block h-6 w-6"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-light hover:text-secondary transition">About</a>
+                    <a href="#experience" class="text-sm font-medium text-light hover:text-secondary transition">Experience</a>
+                    <a href="#education" class="text-sm font-medium text-light hover:text-secondary transition">Education</a>
+                    <a href="#skills" class="text-sm font-medium text-light hover:text-secondary transition">Skills</a>
+                    <a href="#certifications" class="text-sm font-medium text-light hover:text-secondary transition">Certifications</a>
+                    <a href="#contact" class="px-4 py-2 rounded-md bg-secondary text-dark font-medium hover:bg-cyan-600 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu, show/hide based on menu state -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800">
+            <div class="space-y-1 px-4 pt-2 pb-3">
+                <a href="#about" class="block py-2 text-sm font-medium text-light hover:text-secondary transition">About</a>
+                <a href="#experience" class="block py-2 text-sm font-medium text-light hover:text-secondary transition">Experience</a>
+                <a href="#education" class="block py-2 text-sm font-medium text-light hover:text-secondary transition">Education</a>
+                <a href="#skills" class="block py-2 text-sm font-medium text-light hover:text-secondary transition">Skills</a>
+                <a href="#certifications" class="block py-2 text-sm font-medium text-light hover:text-secondary transition">Certifications</a>
+                <a href="#contact" class="block py-2 text-sm font-medium text-secondary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen bg-gradient-to-b from-dark to-primary relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute inset-0 opacity-20">
+            <!-- Replace with your header background image -->
+            <div class="absolute right-0 top-1/3 w-96 h-96 bg-secondary/20 rounded-full filter blur-3xl"></div>
+            <div class="absolute left-1/4 top-1/2 w-64 h-64 bg-accent/20 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col justify-center h-screen pt-16">
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <!-- Portrait Photo Container -->
+                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-secondary shadow-lg shadow-cyan-500/20 mb-8 md:mb-0">
+                    <!-- Replace with your portrait image -->
+                    <div class="w-full h-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-dark">
+                        <i data-lucide="user" class="w-20 h-20"></i>
+                        <img src="./assets/images/portrait.jpg" alt="Fernando Vela Hidalgo" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="text-center md:text-left">
+                    <p class="text-secondary font-mono text-sm tracking-wider mb-2">Hello, I'm</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2">
+                        Fernando Vela Hidalgo
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-light text-slate-300 mb-6">
+                        Research Technician | Master in Robotics and Automation
+                    </h2>
+                    
+                    <!-- Social Links -->
+                    <div class="flex gap-4 justify-center md:justify-start mb-8">
+                        <a href="https://www.linkedin.com/in/fernandovh/" target="_blank" rel="noopener noreferrer"
+                           class="p-2 bg-slate-800/50 hover:bg-blue-600/80 rounded-full transition">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:velahidalgofernando@gmail.com?subject=Contact%20regarding%20your%20portfolio%20and%20potential%20collaboration" 
+                        class="p-2 bg-slate-800/50 hover:bg-secondary/80 rounded-full transition">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://github.com/fervh" class="p-2 bg-slate-800/50 hover:bg-slate-700 rounded-full transition">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="px-6 py-3 bg-secondary hover:bg-cyan-600 text-dark font-medium rounded-md 
+                                              flex items-center justify-center gap-2 transition-all">
+                            <i data-lucide="message-square" class="w-4 h-4"></i>
+                            Contact Me
+                        </a>
+                        <a href="./assets/pdf/CV-Fernando-Vela-Hidalgo.pdf" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="px-6 py-3 border border-secondary/30 hover:border-secondary text-secondary 
+                                font-medium rounded-md flex items-center justify-center gap-2 transition-all">
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#about" class="text-secondary/70 hover:text-secondary">
+                    <i data-lucide="chevron-down" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary">
+                    <i data-lucide="user" class="w-6 h-6"></i>
+                    About Me
+                </h2>
+                <div class="h-1 w-24 bg-secondary rounded mb-8"></div>
+                
+                <div class="prose prose-lg prose-invert max-w-none">
+                    <p class="mb-6 text-slate-300">
+                        Robotics engineer with experience in research and development of autonomous systems. Currently working in 
+                        a research laboratory, specializing in hardware and software for autonomous vehicles, including ROS, 
+                        sensor calibration and synchronization, low-level communication, and real-time perception.
+                    </p>
+                    <p class="mb-6 text-slate-300">
+                        Passionate about connecting R&D with real applications. Looking for international opportunities in robotics, 
+                        field support, and continuous improvement. Certified drone pilot with practical experience in design, 
+                        integration, and autonomous systems.
+                    </p>
+                </div>
+                
+                <!-- Key skills highlight -->
+                <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-dark/50 p-4 rounded-lg border border-slate-800 flex flex-col items-center text-center">
+                        <i data-lucide="cpu" class="w-8 h-8 text-secondary mb-2"></i>
+                        <h3 class="font-medium">Robotics</h3>
+                        <p class="text-sm text-slate-400">ROS1/2, Autonomous Systems</p>
+                    </div>
+                    <div class="bg-dark/50 p-4 rounded-lg border border-slate-800 flex flex-col items-center text-center">
+                        <i data-lucide="code" class="w-8 h-8 text-secondary mb-2"></i>
+                        <h3 class="font-medium">Development</h3>
+                        <p class="text-sm text-slate-400">Python, C++, MATLAB</p>
+                    </div>
+                    <div class="bg-dark/50 p-4 rounded-lg border border-slate-800 flex flex-col items-center text-center">
+                        <i data-lucide="eye" class="w-8 h-8 text-secondary mb-2"></i>
+                        <h3 class="font-medium">Computer Vision</h3>
+                        <p class="text-sm text-slate-400">YOLO, SECOND, OpenCV</p>
+                    </div>
+                    <div class="bg-dark/50 p-4 rounded-lg border border-slate-800 flex flex-col items-center text-center">
+                        <i data-lucide="radio" class="w-8 h-8 text-secondary mb-2"></i>
+                        <h3 class="font-medium">Drone Piloting</h3>
+                        <p class="text-sm text-slate-400">EASA Certified</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-b from-slate-900/50 to-dark/80">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
+                <i data-lucide="briefcase" class="w-6 h-6"></i>
+                Work Experience
+            </h2>
+            <div class="h-1 w-24 bg-secondary rounded mb-12 mx-auto"></div>
+            
+            <!-- Experience Timeline -->
+            <div class="max-w-3xl mx-auto relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block timeline-line"></div>
+                
+                <!-- Job 1 -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="timeline-item mb-12 md:pl-12 relative">
+                    <div class="hidden md:block timeline-dot top-1"></div>
+                    
+                    <div class="bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary">Research Technician</h3>
+                                <div class="flex items-center gap-2 mb-3 text-slate-300">
+                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                                    <span>AMPL, UC3M</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">2023 - Present</span>
+                                <button @click="open = !open" class="mt-2 text-slate-400 hover:text-secondary">
+                                    <i data-lucide="chevron-up" x-show="open" class="w-5 h-5"></i>
+                                    <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div x-show="open" class="mt-4" x-transition>
+                            <ul class="space-y-2 text-slate-300">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
+                                    <span>Real-time perception systems with YOLOv5/v8, SECOND</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
+                                    <span>Sensor calibration (LiDAR, Camera, IMU)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
+                                    <span>ROS1/ROS2 drivers, CAN bus, FlexRay, low-level comms (UDP/TCP/WebRTC/SRT)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
+                                    <span>PCB design, 3D mechanical structures (Fusion 360, Blender)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job 2 -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="timeline-item mb-12 md:pl-12 relative">
+                    <div class="hidden md:block timeline-dot top-1"></div>
+                    
+                    <div class="bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary">Recruitment Technician</h3>
+                                <div class="flex items-center gap-2 mb-3 text-slate-300">
+                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                                    <span>Serveo</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">2022 - 2023</span>
+                                <button @click="open = !open" class="mt-2 text-slate-400 hover:text-secondary">
+                                    <i data-lucide="chevron-up" x-show="open" class="w-5 h-5"></i>
+                                    <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div x-show="open" class="mt-4" x-transition>
+                            <ul class="space-y-2 text-slate-300">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
+                                    <span>Tech project support for energy and facilities management</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job 3 -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="timeline-item mb-12 md:pl-12 relative">
+                    <div class="hidden md:block timeline-dot top-1"></div>
+                    
+                    <div class="bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary">STEM Teacher</h3>
+                                <div class="flex items-center gap-2 mb-3 text-slate-300">
+                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                                    <span>The Creative Minds</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">2020 - 2022</span>
+                                <button @click="open = !open" class="mt-2 text-slate-400 hover:text-secondary">
+                                    <i data-lucide="chevron-up" x-show="open" class="w-5 h-5"></i>
+                                    <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div x-show="open" class="mt-4" x-transition>
+                            <ul class="space-y-2 text-slate-300">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
+                                    <span>Robotics, Python, Arduino, 3D design for students</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job 4 -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="timeline-item mb-12 md:pl-12 relative">
+                    <div class="hidden md:block timeline-dot top-1"></div>
+                    
+                    <div class="bg-dark/80 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary">Private Tutor</h3>
+                                <div class="flex items-center gap-2 mb-3 text-slate-300">
+                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                                    <span>Tusclasesparticulares</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">2018 - 2021</span>
+                                <button @click="open = !open" class="mt-2 text-slate-400 hover:text-secondary">
+                                    <i data-lucide="chevron-up" x-show="open" class="w-5 h-5"></i>
+                                    <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div x-show="open" class="mt-4" x-transition>
+                            <ul class="space-y-2 text-slate-300">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 mt-1 text-accent"></i>
+                                    <span>Math, physics, and programming tutoring</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                Education
+            </h2>
+            <div class="h-1 w-24 bg-secondary rounded mb-12 mx-auto"></div>
+            
+            <div class="max-w-3xl mx-auto relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block timeline-line"></div>
+                
+                <!-- Education 1 -->
+                <div class="timeline-item mb-12 md:pl-12 relative">
+                    <div class="hidden md:block timeline-dot top-1"></div>
+                    
+                    <div class="bg-slate-900/30 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row justify-between items-start">
+                            <div class="mb-3 sm:mb-0">
+                                <h3 class="text-xl font-bold text-secondary">Master in Robotics and Automation</h3>
+                                <div class="flex items-center gap-2 mb-2 text-slate-300">
+                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                                    <span>Universidad Carlos III de Madrid (UC3M)</span>
+                                </div>
+                            </div>
+                            <div class="sm:text-right flex-shrink-0">
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm inline-block whitespace-nowrap">2023 - 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education 2 -->
+                <div class="timeline-item mb-12 md:pl-12 relative">
+                    <div class="hidden md:block timeline-dot top-1"></div>
+                    
+                    <div class="bg-slate-900/30 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row justify-between items-start">
+                            <div class="mb-3 sm:mb-0">
+                                <h3 class="text-xl font-bold text-secondary">B.Sc. in Industrial Electronics and Automation Engineering</h3>
+                                <div class="flex items-center gap-2 mb-2 text-slate-300">
+                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                                    <span>Universidad Carlos III de Madrid (UC3M)</span>
+                                </div>
+                                <div class="bg-accent/10 inline-block text-accent px-2 py-0.5 rounded text-xs">Bilingual</div>
+                            </div>
+                            <div class="sm:text-right flex-shrink-0">
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm inline-block whitespace-nowrap">2019 - 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education 3 -->
+                <div class="timeline-item mb-12 md:pl-12 relative">
+                    <div class="hidden md:block timeline-dot top-1"></div>
+                    
+                    <div class="bg-slate-900/30 border border-slate-800 rounded-lg p-6 hover:border-secondary/50 transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row justify-between items-start">
+                            <div class="mb-3 sm:mb-0">
+                                <h3 class="text-xl font-bold text-secondary">Bachelor of Excellence</h3>
+                                <div class="flex items-center gap-2 mb-2 text-slate-300">
+                                    <i data-lucide="building" class="w-4 h-4 text-slate-400"></i>
+                                    <span>IES Arquitecto Ventura Rodríguez</span>
+                                </div>
+                            </div>
+                            <div class="sm:text-right flex-shrink-0">
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm inline-block whitespace-nowrap">2017 - 2019</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-gradient-to-b from-dark to-slate-900/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
+                <i data-lucide="trophy" class="w-6 h-6"></i>
+                Achievements
+            </h2>
+            <div class="h-1 w-24 bg-secondary rounded mb-12 mx-auto"></div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Achievement 1 -->
+                <div class="bg-dark/80 rounded-lg p-6 border border-slate-800 hover:border-secondary transition-all hover:shadow-lg hover:shadow-secondary/5">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-secondary/10 rounded-md">
+                            <i data-lucide="laptop" class="w-6 h-6 text-secondary"></i>
+                        </div>
+                        <span class="text-sm text-slate-400">2025</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Final Master's Thesis: Driving Simulator</h3>
+                    <p class="text-slate-400 text-sm">Advanced driving simulator project demonstrating robotics expertise and technical skills.</p>
+                </div>
+                
+                <!-- Achievement 2 -->
+                <div class="bg-dark/80 rounded-lg p-6 border border-slate-800 hover:border-secondary transition-all hover:shadow-lg hover:shadow-secondary/5">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-secondary/10 rounded-md">
+                            <i data-lucide="car" class="w-6 h-6 text-secondary"></i>
+                        </div>
+                        <span class="text-sm text-slate-400">2023</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Final Degree Thesis: Miniature Autonomous Vehicle</h3>
+                    <p class="text-slate-400 text-sm">Successfully designed and developed a working miniature autonomous vehicle.</p>
+                </div>
+                
+                <!-- Achievement 3 -->
+                <div class="bg-dark/80 rounded-lg p-6 border border-slate-800 hover:border-secondary transition-all hover:shadow-lg hover:shadow-secondary/5">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-accent/10 rounded-md">
+                            <i data-lucide="award" class="w-6 h-6 text-accent"></i>
+                        </div>
+                        <span class="text-sm text-slate-400">2019</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">1st Place – ASTI Robotics Competition</h3>
+                    <p class="text-slate-400 text-sm">Winner of a prestigious robotics competition showcasing innovation and technical skills.</p>
+                </div>
+                
+                <!-- Achievement 4 -->
+                <div class="bg-dark/80 rounded-lg p-6 border border-slate-800 hover:border-secondary transition-all hover:shadow-lg hover:shadow-secondary/5">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-secondary/10 rounded-md">
+                            <i data-lucide="microscope" class="w-6 h-6 text-secondary"></i>
+                        </div>
+                        <span class="text-sm text-slate-400">Year</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Finalist – Young Researchers (Complutense)</h3>
+                    <p class="text-slate-400 text-sm">Recognized for research contributions and innovative thinking among young researchers.</p>
+                </div>
+                
+                <!-- Achievement 5 -->
+                <div class="bg-dark/80 rounded-lg p-6 border border-slate-800 hover:border-secondary transition-all hover:shadow-lg hover:shadow-secondary/5">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-secondary/10 rounded-md">
+                            <i data-lucide="calculator" class="w-6 h-6 text-secondary"></i>
+                        </div>
+                        <span class="text-sm text-slate-400">2017-2019</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Math Contest Awards</h3>
+                    <p class="text-slate-400 text-sm">Multiple recognitions for excellence in mathematics competitions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
+                <i data-lucide="code-2" class="w-6 h-6"></i>
+                Technical Skills
+            </h2>
+            <div class="h-1 w-24 bg-secondary rounded mb-12 mx-auto"></div>
+            
+            <!-- Tabs -->
+            <div x-data="{ activeTab: 'programming' }" class="max-w-4xl mx-auto">
+                <!-- Tab Navigation -->
+                <div class="flex flex-wrap justify-center gap-2 mb-10">
+                    <button @click="activeTab = 'programming'" 
+                            :class="activeTab === 'programming' ? 'bg-secondary text-dark' : 'bg-dark hover:bg-slate-800 text-slate-300'"
+                            class="px-4 py-2 rounded-md transition font-medium flex items-center gap-1">
+                        <i data-lucide="code" class="w-4 h-4"></i>
+                        <span>Programming</span>
+                    </button>
+                    <button @click="activeTab = 'robotics'" 
+                            :class="activeTab === 'robotics' ? 'bg-secondary text-dark' : 'bg-dark hover:bg-slate-800 text-slate-300'"
+                            class="px-4 py-2 rounded-md transition font-medium flex items-center gap-1">
+                        <i data-lucide="cpu" class="w-4 h-4"></i>
+                        <span>Robotics</span>
+                    </button>
+                    <button @click="activeTab = 'comms'" 
+                            :class="activeTab === 'comms' ? 'bg-secondary text-dark' : 'bg-dark hover:bg-slate-800 text-slate-300'"
+                            class="px-4 py-2 rounded-md transition font-medium flex items-center gap-1">
+                        <i data-lucide="network" class="w-4 h-4"></i>
+                        <span>Communications</span>
+                    </button>
+                    <button @click="activeTab = 'design'" 
+                            :class="activeTab === 'design' ? 'bg-secondary text-dark' : 'bg-dark hover:bg-slate-800 text-slate-300'"
+                            class="px-4 py-2 rounded-md transition font-medium flex items-center gap-1">
+                        <i data-lucide="layers" class="w-4 h-4"></i>
+                        <span>Design</span>
+                    </button>
+                    <button @click="activeTab = 'tools'" 
+                            :class="activeTab === 'tools' ? 'bg-secondary text-dark' : 'bg-dark hover:bg-slate-800 text-slate-300'"
+                            class="px-4 py-2 rounded-md transition font-medium flex items-center gap-1">
+                        <i data-lucide="wrench" class="w-4 h-4"></i>
+                        <span>Tools</span>
+                    </button>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="bg-dark/80 rounded-lg border border-slate-800 p-6">
+                    <!-- Programming Tab -->
+                    <div x-show="activeTab === 'programming'" class="grid grid-cols-2 md:grid-cols-3 gap-6" x-transition>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-blue-400">
+                                <i data-lucide="file-code" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">Python</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-purple-400">
+                                <i data-lucide="file-code-2" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">C++</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-purple-400 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-orange-400">
+                                <i data-lucide="calculator" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">MATLAB</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-orange-400 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-green-400">
+                                <i data-lucide="eye" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">OpenCV</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-green-400 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Robotics Tab -->
+                    <div x-show="activeTab === 'robotics'" class="grid grid-cols-2 md:grid-cols-3 gap-6" x-transition>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-cyan-400">
+                                <i data-lucide="cylinder" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">ROS1/ROS2</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-cyan-400 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-emerald-400">
+                                <i data-lucide="map" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">SLAM</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-emerald-400 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-teal-400">
+                                <i data-lucide="combine" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">Sensor Fusion</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-teal-400 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Communications Tab -->
+                    <div x-show="activeTab === 'comms'" class="grid grid-cols-2 md:grid-cols-3 gap-6" x-transition>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-amber-400">
+                                <i data-lucide="plug" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">CAN Bus</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-amber-400 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-rose-400">
+                                <i data-lucide="lightbulb" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">FlexRay</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-rose-400 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-sky-400">
+                                <i data-lucide="wifi" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">UDP/TCP</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-sky-400 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-violet-400">
+                                <i data-lucide="video" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">WebRTC/SRT</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-violet-400 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Design Tab -->
+                    <div x-show="activeTab === 'design'" class="grid grid-cols-2 md:grid-cols-3 gap-6" x-transition>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-indigo-400">
+                                <i data-lucide="boxes" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">Fusion 360</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-indigo-400 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-orange-400">
+                                <i data-lucide="box" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">Blender</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-orange-400 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-lime-400">
+                                <i data-lucide="printer" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">3D Printing</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-lime-400 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-pink-400">
+                                <i data-lucide="circuit-board" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">PCB Design</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-pink-400 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools Tab -->
+                    <div x-show="activeTab === 'tools'" class="grid grid-cols-2 md:grid-cols-3 gap-6" x-transition>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-blue-400">
+                                <i data-lucide="container" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">Docker</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-yellow-400">
+                                <i data-lucide="terminal" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">Linux</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-yellow-400 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-orange-400">
+                                <i data-lucide="git-branch" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">Git</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-orange-400 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-red-400">
+                                <i data-lucide="bar-chart-3" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">Grafana</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-red-400 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-900/30 rounded-lg hover:bg-slate-900/50 transition">
+                            <div class="text-4xl mb-2 text-purple-400">
+                                <i data-lucide="gamepad-2" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="font-medium text-lg mb-1">Unity</h3>
+                            <div class="w-full bg-slate-800 rounded-full h-2 mt-2">
+                                <div class="bg-purple-400 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gradient-to-b from-slate-900/50 to-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
+                <i data-lucide="bookmark" class="w-6 h-6"></i>
+                Certifications
+            </h2>
+            <div class="h-1 w-24 bg-secondary rounded mb-12 mx-auto"></div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-dark/80 rounded-lg border border-slate-800 overflow-hidden">
+                    <!-- Drone Certifications -->
+                    <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+                        <button @click="open = !open" 
+                                class="w-full px-6 py-4 flex justify-between items-center bg-slate-900/50 hover:bg-slate-900/70 transition">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="rectangle-goggles" class="w-5 h-5 text-secondary"></i>
+                                <h3 class="font-medium text-lg">Drone Pilot Certifications</h3>
+                            </div>
+                            <i data-lucide="chevron-up" x-show="open" class="w-5 h-5 text-slate-400"></i>
+                            <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5 text-slate-400"></i>
+                        </button>
+                        <div x-show="open" class="p-6 bg-dark/30" x-transition>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                                        <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
+                                    </div>
+                                    <span>EASA A1/A3 Open Category</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                                        <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
+                                    </div>
+                                    <span>EASA A2 Open Category</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                                        <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
+                                    </div>
+                                    <span>EASA STS-01 Specific Category</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                                        <i data-lucide="award" class="w-4 h-4 text-secondary"></i>
+                                    </div>
+                                    <span>EASA STS-02 Specific Category</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-secondary/10 rounded-md">
+                                        <i data-lucide="radio" class="w-4 h-4 text-secondary"></i>
+                                    </div>
+                                    <span>UAS & Radio Operator License</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Technical Certifications -->
+                    <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative border-t border-slate-800">
+                        <button @click="open = !open" 
+                                class="w-full px-6 py-4 flex justify-between items-center bg-slate-900/50 hover:bg-slate-900/70 transition">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="file-code" class="w-5 h-5 text-secondary"></i>
+                                <h3 class="font-medium text-lg">Technical Certifications</h3>
+                            </div>
+                            <i data-lucide="chevron-up" x-show="open" class="w-5 h-5 text-slate-400"></i>
+                            <i data-lucide="chevron-down" x-show="!open" class="w-5 h-5 text-slate-400"></i>
+                        </button>
+                        <div x-show="open" class="p-6 bg-dark/30" x-transition>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-accent/10 rounded-md">
+                                        <i data-lucide="calculator" class="w-4 h-4 text-accent"></i>
+                                    </div>
+                                    <span>MATLAB Certification</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-accent/10 rounded-md">
+                                        <i data-lucide="code" class="w-4 h-4 text-accent"></i>
+                                    </div>
+                                    <span>Python Programming</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-accent/10 rounded-md">
+                                        <i data-lucide="shield" class="w-4 h-4 text-accent"></i>
+                                    </div>
+                                    <span>Cybersecurity Fundamentals</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-accent/10 rounded-md">
+                                        <i data-lucide="layout" class="w-4 h-4 text-accent"></i>
+                                    </div>
+                                    <span>Web Development</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="p-1.5 bg-accent/10 rounded-md">
+                                        <i data-lucide="gamepad-2" class="w-4 h-4 text-accent"></i>
+                                    </div>
+                                    <span>Unity Development</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages & Interests Section -->
+    <section id="languages-interests" class="py-20 bg-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Languages -->
+                    <div>
+                        <h2 class="text-2xl font-bold mb-2 flex items-center gap-2 text-secondary">
+                            <i data-lucide="languages" class="w-6 h-6"></i>
+                            Languages
+                        </h2>
+                        <div class="h-1 w-16 bg-secondary rounded mb-8"></div>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Spanish</span>
+                                    <span class="text-secondary">Native</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">English</span>
+                                    <span class="text-secondary">C1</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">German</span>
+                                    <span class="text-secondary">A2</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interests -->
+                    <div>
+                        <h2 class="text-2xl font-bold mb-2 flex items-center gap-2 text-secondary">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                            Interests
+                        </h2>
+                        <div class="h-1 w-16 bg-secondary rounded mb-8"></div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <div class="bg-dark/80 border border-secondary/30 px-3 py-1 rounded-full flex items-center gap-2">
+                                <i data-lucide="rectangle-goggles" class="w-4 h-4 text-secondary"></i>
+                                <span>Drones</span>
+                            </div>
+                            <div class="bg-dark/80 border border-secondary/30 px-3 py-1 rounded-full flex items-center gap-2">
+                                <i data-lucide="plane" class="w-4 h-4 text-secondary"></i>
+                                <span>Aerial Robotics</span>
+                            </div>
+                            <div class="bg-dark/80 border border-secondary/30 px-3 py-1 rounded-full flex items-center gap-2">
+                                <i data-lucide="printer" class="w-4 h-4 text-secondary"></i>
+                                <span>3D Printing</span>
+                            </div>
+                            <div class="bg-dark/80 border border-secondary/30 px-3 py-1 rounded-full flex items-center gap-2">
+                                <i data-lucide="car" class="w-4 h-4 text-secondary"></i>
+                                <span>Autonomous Vehicles</span>
+                            </div>
+                            <div class="bg-dark/80 border border-secondary/30 px-3 py-1 rounded-full flex items-center gap-2">
+                                <i data-lucide="rectangle-goggles" class="w-4 h-4 text-secondary"></i>
+                                <span>Virtual Reality</span>
+                            </div>
+                            <div class="bg-dark/80 border border-secondary/30 px-3 py-1 rounded-full flex items-center gap-2">
+                                <i data-lucide="video" class="w-4 h-4 text-secondary"></i>
+                                <span>Video Streaming</span>
+                            </div>
+                            <div class="bg-dark/80 border border-secondary/30 px-3 py-1 rounded-full flex items-center gap-2">
+                                <i data-lucide="github" class="w-4 h-4 text-secondary"></i>
+                                <span>Open Source</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-dark to-slate-900/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-2 flex items-center gap-2 text-secondary text-center">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+                Get In Touch
+            </h2>
+            <div class="h-1 w-24 bg-secondary rounded mb-8 mx-auto"></div>
+            <p class="text-slate-300 text-center max-w-2xl mx-auto mb-10">
+                Interested in working together or have a question? Feel free to reach out to me using the form below
+                or through my linkedin profile.
+            </p>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+                    <!-- Contact Info -->
+                    <div class="lg:col-span-2">
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-secondary/10 rounded-lg">
+                                    <i data-lucide="mail" class="w-6 h-6 text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-lg mb-1">Email</h3>
+                                    <p class="text-slate-400">
+                                        <a href="mailto:velahidalgofernando@gmail.com" class="text-secondary hover:text-cyan-40 transition">
+                                            velahidalgofernando@gmail.com
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-secondary/10 rounded-lg">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-lg mb-1">Location</h3>
+                                    <p class="text-slate-400">Madrid, Spain</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-secondary/10 rounded-lg">
+                                    <i data-lucide="linkedin" class="w-6 h-6 text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-lg mb-1">LinkedIn</h3>
+                                    <a href="https://www.linkedin.com/in/fernandovh/" class="text-secondary hover:text-cyan-400 transition" target="_blank" rel="noopener noreferrer">
+                                        linkedin.com/in/fernandovh
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-3">
+                        <form id="contactForm" class="space-y-4" onsubmit="sendMail(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Name</label>
+                                    <input type="text" id="name" name="name" 
+                                        class="w-full bg-dark/80 border border-slate-700 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                                        required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Email</label>
+                                    <input type="email" id="email" name="email" 
+                                        class="w-full bg-dark/80 border border-slate-700 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                                        required>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-slate-300 mb-1">Subject</label>
+                                <input type="text" id="subject" name="subject"
+                                    class="w-full bg-dark/80 border border-slate-700 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                                    placeholder="Contact regarding your portfolio and potential collaboration">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-300 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" 
+                                        class="w-full bg-dark/80 border border-slate-700 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                                        required></textarea>
+                            </div>
+                            <button type="submit" class="bg-secondary hover:bg-cyan-600 text-dark font-medium px-6 py-3 rounded-md transition-colors flex items-center gap-2">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="py-10 bg-dark border-t border-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#hero" class="text-xl font-bold text-secondary tracking-tight">Fernando Vela Hidalgo</a>
+                    <p class="text-slate-400 mt-1">© 2025 All rights reserved.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/fernandovh/" target="_blank" rel="noopener noreferrer"
+                       class="p-2 bg-slate-800/50 hover:bg-blue-600/80 rounded-full transition">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="p-2 bg-slate-800/50 hover:bg-secondary/80 rounded-full transition">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="p-2 bg-slate-800/50 hover:bg-slate-700 rounded-full transition">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center text-slate-500 text-sm mt-8">
+                <p>Last updated on May 18, 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" 
+            class="fixed bottom-6 right-6 bg-secondary text-dark p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/send-mail.js" defer></script>
+    <script src="assets/js/mouse-effects.js"></script>
+</body>
+</html>

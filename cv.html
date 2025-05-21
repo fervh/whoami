@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando Vela Hidalgo - Professional Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* CV styles optimized for PDF export with enhanced professional aesthetics */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                zoom: 1; /* Ajusta este valor para escalar el contenido a una sola página */
+            }
+
+            .user-column {
+                display: none !important;
+            }
+
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                overflow: hidden;
+            }
+        }
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: white;
+            color: #1e293b; /* slate-800 */
+            font-size: 8.5pt; /* Further reduced for better fit */
+            line-height: 1.3; /* Reduced from 1.4 */
+            margin: 0;
+        }
+
+        .main-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .user-column {
+            width: 210px; /* Slightly reduced */
+            background-color: #f1f5f9; /* slate-100 - slightly darker gray */
+            padding: 15px; /* Reduced padding */
+            border-right: 1px solid #cbd5e1; /* slate-300 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-column-content {
+            position: sticky;
+            top: 20px;
+        }
+        
+        .user-profile {
+            text-align: center;
+            margin-bottom: 20px; /* Reduced from 25px */
+        }
+        
+        .user-avatar {
+            width: 70px; /* Reduced from 80px */
+            height: 70px; /* Reduced from 80px */
+            border-radius: 50%;
+            margin: 0 auto 8px; /* Reduced margin */
+            border: 2px solid #64748b; /* slate-500 - more gray than blue */
+            overflow: hidden;
+        }
+        
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .user-name {
+            font-weight: 600;
+            font-size: 13pt; /* Reduced from 14pt */
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        
+        .user-login {
+            color: #64748b;
+            font-size: 10pt; /* Reduced from 11pt */
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        
+        .save-pdf-btn {
+            display: block;
+            background-color: #475569; /* slate-600 - darker gray with a hint of blue */
+            color: white;
+            padding: 10px 12px; /* Reduced padding */
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+            margin: 15px 0; /* Reduced margin */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            border: none;
+            font-size: 10pt; /* Reduced from 11pt */
+        }
+        
+        .save-pdf-btn:hover {
+            background-color: #334155; /* slate-700 */
+        }
+
+        .user-links {
+            margin-top: 15px; /* Reduced from 20px */
+        }
+
+        .user-link {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Reduced from 10px */
+            padding: 8px 5px; /* Reduced padding */
+            color: #475569;
+            text-decoration: none;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 9pt; /* Reduced from 10pt */
+        }
+
+        .user-link:hover {
+            color: #334155; /* slate-700 */
+            background-color: #e2e8f0; /* slate-200 */
+        }
+        
+        .resume-container {
+            flex: 1;
+            max-width: 800px; /* A4 width with margins - adjusted */
+        }
+        
+        .page-container {
+            padding: 12px 20px; /* Reduced padding */
+            position: relative;
+        }
+        
+        /* Header styles with professional styling */
+        .header {
+            position: relative;
+            margin-bottom: 12px; /* Reduced */
+            padding: 10px 12px; /* Further reduced padding */
+            border-bottom: 1px solid #e2e8f0; /* slate-200 */
+            background: linear-gradient(to right, #c7cace, #e2e8f0); /* Professional gray gradient */
+            border-radius: 6px; /* Reduced from 8px */
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05); /* Lighter shadow */
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .name-website {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .website-link {
+            font-size: 8pt; /* Reduced from 9pt */
+            margin-top: 2px; /* Reduced from 3px */
+            color: #475569; /* slate-600 - more grayed out */
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.1px; /* Reduced from 0.2px */
+        }
+        
+        .profile-image {
+            width: 110px; /* Reduced from 120px */
+            height: 150px; /* Reduced from 160px */
+            border-radius: 2%;
+            border: 1px solid #64748b; /* slate-500 */
+            overflow: hidden;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.1);
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        h1 {
+            font-size: 16pt; /* Reduced from 18pt */
+            font-weight: 700;
+            color: #0f172a; /* slate-900 */
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 9pt; /* Reduced from 10pt */
+            color: #475569; /* slate-600 */
+            margin: 3px 0 6px; /* Further reduced margins */
+            font-weight: 400;
+            letter-spacing: 0.1px;
+        }
+        
+        /* Two-column content layout */
+        .content-columns {
+            display: flex;
+            gap: 15px; /* Reduced from 18px */
+        }
+        
+        .left-column {
+            width: 61%; /* Slightly adjusted for balance */
+        }
+        
+        .right-column {
+            width: 39%; /* Slightly adjusted for balance */
+        }
+        
+        h2 {
+            font-size: 11pt; /* Reduced from 12pt */
+            color: #0f172a; /* slate-900 */
+            margin: 12px 0 8px; /* Reduced margins */
+            padding-bottom: 3px; /* Reduced padding */
+            border-bottom: 2px solid #64748b; /* slate-500 - changed from cyan */
+            display: inline-block;
+            font-weight: 600;
+            letter-spacing: 0.1px; /* Reduced from 0.2px */
+        }
+        
+        h3 {
+            font-size: 9pt; /* Reduced from 10pt */
+            font-weight: 600;
+            color: #0f172a; /* slate-900 */
+            margin-bottom: 2px;
+        }
+        
+        /* Contact info styles */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 6px; /* Reduced from 8px */
+            gap: 5px; /* Reduced from 6px */
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 4px; /* Reduced from 5px */
+            font-size: 8pt; /* Reduced from 8.5pt */
+            padding: 2px 6px; /* Reduced padding */
+            border-radius: 3px; /* Reduced from 4px */
+            background-color: #f8fafc; /* slate-50 */
+            border: 1px solid #e2e8f0; /* slate-200 */
+            font-weight: 500;
+        }
+        
+        .icon {
+            color: #64748b; /* slate-500 - changed from cyan */
+        }
+        
+        a {
+            color: #334155; /* slate-700 - darker gray than before */
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Content styles */
+        .section {
+            margin-bottom: 12px; /* Reduced from 14px */
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 7px; /* Reduced from 9px */
+        }
+        
+        .company-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8.5pt; /* Reduced from 9pt */
+            margin-bottom: 2px; /* Reduced from 3px */
+        }
+        
+        .company {
+            font-weight: 600;
+            color: #334155; /* slate-700 */
+        }
+        
+        .date {
+            color: #475569; /* slate-600 */
+            font-weight: 500;
+            padding: 1px 6px; /* Reduced padding */
+            border-radius: 3px; /* Reduced from 4px */
+            background-color: #f1f5f9; /* slate-100 */
+            font-size: 7.5pt; /* Reduced from 8pt */
+        }
+        
+        ul {
+            padding-left: 14px; /* Reduced from 16px */
+            margin-top: 2px; /* Reduced from 3px */
+            margin-bottom: 5px; /* Reduced from 6px */
+        }
+        
+        li {
+            margin-bottom: 1px; /* Reduced from 2px */
+            position: relative;
+            padding-left: 1px; /* Reduced from 2px */
+        }
+        
+        li::marker {
+            color: #64748b; /* slate-500 - changed from cyan */
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: #0f172a; /* slate-900 */
+        }
+        
+        .summary {
+            margin-bottom: 12px; /* Reduced from 14px */
+            font-size: 8.5pt; /* Reduced from 9pt */
+            line-height: 1.3; /* Reduced from 1.4 */
+            padding: 8px; /* Reduced from 10px */
+            background-color: #f8fafc; /* slate-50 */
+            border-left: 3px solid #64748b; /* slate-500 - changed from cyan */
+            border-radius: 0 4px 4px 0; /* Reduced from 0 5px 5px 0 */
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+        }
+        
+        /* Skills section */
+        .skill-category {
+            background-color: #f8fafc; /* slate-50 */
+            padding: 6px 8px; /* Reduced from 8px 10px */
+            border-radius: 4px; /* Reduced from 5px */
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+            border: 1px solid #e2e8f0; /* slate-200 */
+            margin-bottom: 6px; /* Reduced from 8px */
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 4px; /* Reduced from 6px */
+            font-size: 9pt; /* Reduced from 9.5pt */
+            color: #0f172a; /* slate-900 */
+            padding-bottom: 3px; /* Reduced from 4px */
+            border-bottom: 1px solid #e2e8f0; /* slate-200 */
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px; /* Reduced from 4px */
+        }
+        
+        .skill-item {
+            background-color: #f1f5f9; /* slate-100 */
+            padding: 1px 5px; /* Reduced padding */
+            border-radius: 3px;
+            font-size: 7.5pt; /* Reduced from 8pt */
+            color: #0f172a; /* slate-900 */
+            border: 1px solid #e2e8f0; /* slate-200 */
+        }
+        
+        .skill-key {
+            font-weight: 600;
+            background-color: #e2e8f0; /* slate-200 - changed from sky-blue */
+            color: #334155; /* slate-700 - changed from sky-blue */
+            border-color: #cbd5e1; /* slate-300 - changed from sky-blue */
+        }
+        
+        /* Projects section */
+        .project-item {
+            background-color: #f8fafc; /* slate-50 */
+            border-left: 3px solid #64748b; /* slate-500 - changed from cyan */
+            padding: 5px 7px; /* Reduced from 6px 8px */
+            border-radius: 0 3px 3px 0; /* Reduced from 0 4px 4px 0 */
+            margin-bottom: 5px; /* Reduced from 6px */
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            font-size: 9pt; /* Reduced from 9.5pt */
+            color: #0f172a; /* slate-900 */
+            margin-bottom: 1px; /* Reduced from 2px */
+            display: flex;
+            align-items: center;
+            gap: 4px; /* Reduced from 5px */
+        }
+        
+        .project-desc {
+            font-size: 7.5pt; /* Reduced from 8pt */
+            color: #475569; /* slate-600 */
+            line-height: 1.2; /* Reduced from 1.3 */
+        }
+        
+        /* Languages & certifications */
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2px; /* Reduced from 3px */
+            background-color: #f8fafc; /* slate-50 */
+            padding: 3px 6px; /* Reduced from 4px 8px */
+            border-radius: 3px; /* Reduced from 4px */
+            border: 1px solid #e2e8f0; /* slate-200 */
+            font-size: 8pt; /* Reduced from 8.5pt */
+        }
+        
+        .lang-name {
+            font-weight: 600;
+            color: #0f172a; /* slate-900 */
+        }
+        
+        .lang-level {
+            color: #475569; /* slate-600 - changed from sky-blue */
+            font-weight: 500;
+        }
+        
+        .cert-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px; /* Reduced from 5px */
+        }
+        
+        .cert-item {
+            background-color: #f1f5f9; /* slate-100 */
+            padding: 2px 6px; /* Reduced from 3px 7px */
+            border-radius: 3px;
+            font-size: 7.5pt; /* Reduced from 8pt */
+            color: #0f172a; /* slate-900 */
+            border: 1px solid #e2e8f0; /* slate-200 */
+        }
+        
+        .cert-highlight {
+            background-color: #e2e8f0; /* slate-200 - changed from sky-blue */
+            color: #334155; /* slate-700 - changed from sky-blue */
+            border-color: #cbd5e1; /* slate-300 - changed from sky-blue */
+            font-weight: 500;
+        }
+        
+        /* Keep one accent color for buttons and key highlights */
+        .accent {
+            color: #0284c7; /* Keeping some blue accent */
+        }
+        
+        /* Page footer */
+        .footer {
+            margin-top: 12px; /* Reduced from 15px */
+            text-align: center;
+            font-size: 7pt; /* Reduced from 7.5pt */
+            color: #64748b; /* slate-500 */
+            padding-top: 5px; /* Reduced from 6px */
+            border-top: 1px solid #e2e8f0; /* slate-200 */
+        }
+        
+        /* Print styles */
+        @media print {
+            .user-column {
+                display: none;
+            }
+            
+            .main-container {
+                display: block;
+            }
+            
+            .resume-container {
+                margin: 0 auto;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            body {
+                font-size: 8.5pt;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .page-container {
+                page-break-after: always;
+                height: 100%;
+                padding: 8px 15px; /* Further reduced padding for print */
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            a {
+                text-decoration: none;
+                color: #334155; /* slate-700 */
+            }
+            
+            .no-break {
+                page-break-inside: avoid;
+            }
+            
+            .header {
+                margin-bottom: 10px;
+                padding: 8px 10px;
+            }
+            
+            /* Page break controls */
+            .experience-item, .education-item, .section {
+                page-break-inside: avoid;
+            }
+            
+            /* Scale adjustments for print */
+            .profile-image {
+                width: 105px;
+                height: 140px;
+            }
+            
+            h1 {
+                font-size: 15pt;
+            }
+            
+            .subtitle {
+                font-size: 8.5pt;
+            }
+            
+            h2 {
+                font-size: 10.5pt;
+            }
+            
+            h3 {
+                font-size: 8.5pt;
+            }
+            
+            /* Adjust content spacing for print */
+            .content-columns {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- User Column with login and PDF button -->
+        <div class="user-column">
+            <div class="user-column-content">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="./assets/images/portrait2.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-name">Fernando Vela</div>
+                </div>
+                
+                <button onclick="saveToPdf()" class="save-pdf-btn">
+                    <i data-lucide="download" width="16" height="16" style="margin-right: 5px; vertical-align: -2px;"></i>
+                    Save as PDF
+                </button>
+                
+                <div class="user-links">
+                    <a href="index.html" class="user-link">
+                        <i data-lucide="globe" width="18" height="18"></i>
+                        Portfolio
+                    </a>
+                    <a href="mailto:fernandovelahidalgo@gmail.com" class="user-link">
+                        <i data-lucide="mail" width="18" height="18"></i>
+                        Contact
+                    </a>
+                    <a href="https://www.linkedin.com/in/fernandovh/" target="_blank" class="user-link">
+                        <i data-lucide="linkedin" width="18" height="18"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Resume Content -->
+        <div class="resume-container">
+            <div class="page-container">
+            <!-- Header with gray background -->
+            <div class="header">
+                <div class="header-top">
+                    <div class="left-content">
+                        <div class="name-website">
+                            <h1>Fernando Vela Hidalgo</h1>
+                            <a href="https://fervh.github.io/whoami/" class="website-link" target="_blank">
+                                https://fervh.github.io/whoami/
+                            </a>
+                        </div>
+                        <div class="subtitle">
+                            Robotics Engineer | Research Technician | Master in Robotics and Automation
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i data-lucide="mail" class="icon" width="14" height="14"></i>
+                                <a href="mailto:fernandovelahidalgo@gmail.com">fernandovelahidalgo@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i data-lucide="linkedin" class="icon" width="14" height="14"></i>
+                                <a href="https://www.linkedin.com/in/fernandovh/">linkedin.com/in/fernandovh</a>
+                            </div>
+                            <div class="contact-item">
+                                <i data-lucide="map-pin" class="icon" width="14" height="14"></i>
+                                <span>Madrid, Spain</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-image">
+                        <img src="./assets/images/portrait3.jpg" alt="Fernando Vela Hidalgo" />
+                    </div>
+                </div>
+            </div>
+
+
+                <!-- Two-Column Layout -->
+                <div class="content-columns">
+                    <!-- Left Column -->
+                    <div class="left-column">
+                        <!-- Summary -->
+                        <div class="section no-break">
+                            <div class="summary">
+                                Robotics engineer with experience in <span class="highlight">autonomous systems</span> R&D. Specialized in hardware and software for autonomous vehicles, including <span class="highlight">ROS</span>, sensor calibration, low-level communication, and real-time perception. Passionate about connecting <span class="highlight">R&D with real applications</span>. <span class="highlight">Certified drone pilot</span>, with strong interest in robotics. <span class="highlight">Open to international roles in cutting-edge robotics; fully mobile and ready to relocate.</span>
+                            </div>
+                        </div>
+
+                        <!-- Experience -->
+                        <div class="section no-break">
+                            <h2>Professional Experience</h2>
+                            
+                            <div class="experience-item">
+                                <h3>Research Technician – Autonomous Vehicles & Robotics</h3>
+                                <div class="company-date">
+                                    <div class="company">Autonomous Mobility and Perception Lab (AMPL) - UC3M</div>
+                                    <div class="date">2023 – Present</div>
+                                </div>
+                                <ul>
+                                    <li>Developed sensor drivers in <span class="highlight">C++/Python</span> for integration with <span class="highlight">ROS/ROS2</span>.</li>
+                                    <li>Calibrated and synchronized sensor (<span class="highlight">IMU, LiDAR, cameras</span>) for perception.</li>
+                                    <li>Implemented low-level communication over <span class="highlight">CAN bus</span> at ECU level for real-time vehicle control.</li>
+                                    <li>Designed real-time data streaming systems using <span class="highlight">UDP, TCP, WebRTC, SRT</span>, and custom protocols.</li>
+                                    <li>Real-time perception using <span class="highlight">PyTorch and TensorFlow</span> (YOLO, SECOND, etc.).</li>
+                                    <li>Created monitoring dashboards with <span class="highlight">Grafana</span> for system diagnostics.</li>
+                                    <li>Developed VR applications and 3D interfaces using <span class="highlight">Unity/ROS</span>.</li>
+                                    <li>Designed PCBs for custom sensor and actuator interfaces.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="experience-item">
+                                <h3>Contracting Technician Intern – Technology Projects</h3>
+                                <div class="company-date">
+                                    <div class="company">Serveo</div>
+                                    <div class="date">2022 – 2023</div>
+                                </div>
+                                <ul>
+                                    <li>Participated in public tenders for projects in Facility Management and Technology Services.</li>
+                                    <li>Contributed to technical design and proposal writing for <span class="highlight">smart city projects</span>.</li>
+                                    <li>Collaborated with partners offering <span class="highlight">IoT, AI/ML</span>, and digitalization solutions.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="experience-item">
+                                <h3>STEM Teacher</h3>
+                                <div class="company-date">
+                                    <div class="company">The Creative Minds Education</div>
+                                    <div class="date">2020 – 2022</div>
+                                </div>
+                                <!-- <ul>
+                                    <li>Taught <span class="highlight">robotics, 3D printing, and programming</span></li>
+                                </ul> -->
+                            </div>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="section no-break">
+                            <h2>Education</h2>
+                            
+                            <div class="education-item">
+                                <h3>Master's Degree in Robotics and Automation</h3>
+                                <div class="company-date">
+                                    <div class="company">Carlos III University of Madrid (UC3M)</div>
+                                    <div class="date">2023 – 2025</div>
+                                </div>
+                            </div>
+                            
+                            <div class="education-item">
+                                <h3>B.Sc. in Industrial Electronics and Automation Engineering</h3>
+                                <div class="company-date">
+                                    <div class="company">Carlos III University of Madrid (UC3M) - Bilingual</div>
+                                    <div class="date">2019 – 2023</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Projects - Moved to left column for better balance -->
+                        <div class="section no-break">
+                            <h2>Personal Projects</h2>
+                            
+                            <div class="project-item">
+                                <div class="project-title">
+                                    <i data-lucide="radio" class="icon" width="14" height="14"></i>
+                                    Drone Design & Construction
+                                </div>
+                                <div class="project-desc">Built <span class="highlight">FPV & autonomous drones</span> with 3D-printed frames and custom electronics</div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <div class="project-title">
+                                    <i data-lucide="layers" class="icon" width="14" height="14"></i>
+                                    3D Printing & CAD
+                                </div>
+                                <div class="project-desc">Designed mechanical parts using <span class="highlight">Blender & Fusion 360</span></div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <div class="project-title">
+                                    <i data-lucide="rectangle-goggles" class="icon" width="14" height="14"></i>
+                                    VR Development
+                                </div>
+                                <div class="project-desc">Created <span class="highlight">VR applications</span> for robotic system control</div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <div class="project-title">
+                                    <i data-lucide="recycle" class="icon" width="14" height="14"></i>
+                                    Plastic Recycling System
+                                </div>
+                                <div class="project-desc">Built <span class="highlight">PET recycling system</span> for 3D printing filament</div>
+                            </div>
+
+                            <div class="project-item">
+                                <div class="project-title">
+                                    <i data-lucide="layout-template" class="icon" width="14" height="14"></i>
+                                    Full-Stack Web Development
+                                </div>
+                                <div class="project-desc">Created web applications and interfaces</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="right-column">
+                        <!-- Technical Skills -->
+                        <div class="section no-break">
+                            <h2>Technical Skills</h2>
+                            
+                            <div class="skill-category">
+                                <h3>Languages & Frameworks</h3>
+                                <div class="skill-list">
+                                    <span class="skill-item skill-key">Python</span>
+                                    <span class="skill-item skill-key">C++</span>
+                                    <span class="skill-item skill-key">ROS/ROS2</span>
+                                    <span class="skill-item">PyTorch</span>
+                                    <span class="skill-item">TensorFlow</span>
+                                    <span class="skill-item">OpenCV</span>
+                                    <span class="skill-item">MATLAB</span>
+                                    <span class="skill-item">Simulink</span>
+                                    <span class="skill-item">C#/Unity</span>
+                                    <span class="skill-item">HTML/CSS</span>
+                                    <span class="skill-item">JavaScript</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h3>Robotics & Hardware</h3>
+                                <div class="skill-list">
+                                    <span class="skill-item skill-key">CAN bus</span>
+                                    <span class="skill-item">FlexRay</span>
+                                    <span class="skill-item skill-key">Sensor fusion</span>
+                                    <span class="skill-item skill-key">SLAM</span>
+                                    <span class="skill-item">PCB design</span>
+                                    <span class="skill-item">Arduino</span>
+                                    <span class="skill-item">STM32</span>
+                                    <span class="skill-item">Raspberry Pi</span>
+                                    <span class="skill-item skill-key">Sensor calibration</span>
+                                    <span class="skill-item">Low-level control</span>
+                                    <span class="skill-item skill-key">3D Printing</span>
+                                    <span class="skill-item">UDP/TCP</span>
+                                    <span class="skill-item">I2C/SPI</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h3>Tools & DevOps</h3>
+                                <div class="skill-list">
+                                    <span class="skill-item skill-key">Docker</span>
+                                    <span class="skill-item skill-key">Linux</span>
+                                    <span class="skill-item skill-key">Git</span>
+                                    <span class="skill-item">Grafana</span>
+                                    <span class="skill-item">Fusion 360</span>
+                                    <span class="skill-item">Solid Edge</span>
+                                    <span class="skill-item">Blender</span>
+                                    <span class="skill-item skill-key">VR/Unity</span>
+                                    <span class="skill-item">LabVIEW</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Languages -->
+                        <div class="section no-break">
+                            <h2>Languages</h2>
+                            <div class="lang-item">
+                                <div class="lang-name">Spanish</div>
+                                <div class="lang-level">Native</div>
+                            </div>
+                            <div class="lang-item">
+                                <div class="lang-name">English</div>
+                                <div class="lang-level">C1</div>
+                            </div>
+                            <div class="lang-item">
+                                <div class="lang-name">German</div>
+                                <div class="lang-level">A2</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Certifications -->
+                        <div class="section no-break">
+                            <h2>Certifications</h2>
+                            <div class="cert-container">
+                                <span class="cert-item cert-highlight">EASA Drone Pilot A1/A3</span>
+                                <span class="cert-item cert-highlight">EASA Drone Pilot A2</span>
+                                <span class="cert-item cert-highlight">EASA Drone Pilot STS</span>
+                                <span class="cert-item">UAS Operator</span>
+                                <span class="cert-item">Radio Operator</span>
+                                <span class="cert-item cert-highlight">MATLAB Certified</span>
+                                <span class="cert-item">Scientific Computing with Python</span>
+                                <span class="cert-item">Construction 4.0</span>
+                                <span class="cert-item">Mobile App Development</span>
+                                <span class="cert-item">Web Development</span>
+                                <span class="cert-item">Leisure and free time instructor</span>
+                                <span class="cert-item">Video games in Unity</span>
+                                <span class="cert-item">Driver’s license (Class B)</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Achievements -->
+                        <div class="section no-break">
+                            <h2>Achievements</h2>
+                            <ul>
+                                <li><span class="highlight">Vehicle Immersion System</span> - Final Master's Thesis (2025)</li>
+                                <li><span class="highlight">Miniature Autonomous Vehicle</span> - Final Degree Thesis (2023)</li>
+                                <li><span class="highlight">ASTI Robotics Competition</span> - 1st place (2019)</li>
+                                <li><span class="highlight">Young Researchers at Complutense University</span> (2019)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Footer -->
+                <div class="footer">
+                    Last updated: May 2025 • Fernando Vela Hidalgo • Available for international opportunities
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for PDF functionality -->
+    <script>
+        function saveToPdf() {
+            // Guardar la posición de scroll
+            const scrollPos = window.scrollY;
+
+            // Ocultar la columna de usuario manualmente (por seguridad)
+            const userColumn = document.querySelector('.user-column');
+            if (userColumn) {
+                userColumn.style.display = 'none';
+            }
+
+            // Imprimir
+            window.print();
+
+            // Restaurar después de imprimir
+            setTimeout(function () {
+                if (userColumn) {
+                    userColumn.style.display = '';
+                }
+                window.scrollTo(0, scrollPos);
+            }, 100);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
